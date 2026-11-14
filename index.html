@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tupperware Club · Vide-dressing</title>
+<meta name="description" content="Les chaussures de Jenn cherchent une nouvelle maison. Viens te positionner 💋">
+<meta property="og:title" content="Tupperware Club · Vide-dressing">
+<meta property="og:description" content="Les chaussures de Jenn cherchent une nouvelle maison. Viens te positionner 💋">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Pacifico&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#ff4fa0; --pink-deep:#e0115f; --bubble:#ffd3e8; --cream:#fff7ec;
+  --ink:#3a0d25; --yellow:#ffe14d; --mint:#9be7d4; --lilac:#c9a7ff;
+  --shadow:4px 4px 0 var(--ink);
+}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{
+  margin:0; font-family:'DM Sans',system-ui,sans-serif; color:var(--ink); background-color:var(--bubble);
+  background-image:
+    repeating-linear-gradient(90deg, rgba(255,79,160,.22) 0 18px, transparent 18px 46px),
+    repeating-linear-gradient(0deg, rgba(255,79,160,.22) 0 18px, transparent 18px 46px),
+    repeating-linear-gradient(90deg, transparent 0 30px, rgba(255,255,255,.55) 30px 32px, transparent 32px 46px),
+    repeating-linear-gradient(0deg, transparent 0 30px, rgba(255,255,255,.55) 30px 32px, transparent 32px 46px);
+  min-height:100vh; overflow-x:hidden;
+}
+button,input,textarea{font:inherit;color:inherit}
+
+/* ---------- En-tête ---------- */
+header{text-align:center; padding:34px 16px 18px; position:relative}
+.kicker{display:inline-block; font-family:'Abril Fatface',serif; letter-spacing:.18em; font-size:13px;
+  background:var(--ink); color:var(--yellow); padding:6px 14px; border-radius:999px; text-transform:uppercase}
+h1{font-family:'Pacifico',cursive; font-weight:400; margin:10px 0 4px; line-height:1.1;
+  font-size:clamp(46px,12vw,92px); color:#fff; transform:rotate(-3deg);
+  text-shadow:3px 3px 0 var(--pink-deep), 6px 6px 0 var(--ink)}
+.episode{display:inline-block; margin-top:14px; background:var(--yellow); border:3px solid var(--ink);
+  box-shadow:var(--shadow); padding:8px 16px; font-family:'Abril Fatface',serif; font-size:clamp(17px,4.5vw,22px);
+  transform:rotate(2deg)}
+.sticker{position:absolute; font-family:'Pacifico',cursive; font-size:15px; background:var(--mint); border:3px solid var(--ink);
+  border-radius:50%; width:84px; height:84px; display:grid; place-items:center; text-align:center; line-height:1.1;
+  box-shadow:var(--shadow)}
+.sticker.s1{top:18px; right:max(12px,calc(50% - 360px)); transform:rotate(12deg)}
+.sticker.s2{top:150px; left:max(10px,calc(50% - 380px)); background:var(--lilac); transform:rotate(-10deg)}
+@media (max-width:560px){.sticker{width:64px;height:64px;font-size:12px}.sticker.s2{top:170px}}
+
+/* ---------- Bandeau défilant ---------- */
+.ribbon{background:var(--pink-deep); color:var(--yellow); border-block:3px solid var(--ink); overflow:hidden;
+  white-space:nowrap; font-family:'Abril Fatface',serif; font-size:17px; letter-spacing:.06em; padding:8px 0; margin:12px 0 0}
+.ribbon span{display:inline-block; padding-left:100%; animation:defile 26s linear infinite}
+@keyframes defile{to{transform:translateX(-100%)}}
+@media (prefers-reduced-motion:reduce){.ribbon span{animation:none;padding-left:16px}}
+
+main{max-width:1100px; margin:0 auto; padding:22px 16px 40px}
+
+/* ---------- Bonjour + règlement ---------- */
+.hello{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; margin-bottom:18px}
+.hello p{margin:0; font-size:18px; background:#fff; border:3px solid var(--ink); border-radius:999px; padding:8px 18px; box-shadow:var(--shadow)}
+.hello strong{font-family:'Pacifico',cursive; font-weight:400; color:var(--pink-deep)}
+.linkish{background:none; border:0; text-decoration:underline; cursor:pointer; font-size:14px; padding:4px}
+.rules{background:var(--cream); border:3px dashed var(--pink-deep); border-radius:18px; padding:18px 20px; margin-bottom:22px;
+  box-shadow:0 0 0 6px var(--cream), 6px 6px 0 6px var(--ink)}
+.rules h2{font-family:'Abril Fatface',serif; font-weight:400; margin:0 0 8px; font-size:24px; color:var(--pink-deep)}
+.rules p{margin:6px 0; line-height:1.5}
+
+/* ---------- Onglets ---------- */
+.tabs{display:flex; gap:10px; margin-bottom:16px}
+.tabs button{flex:1; border:3px solid var(--ink); border-radius:16px; padding:12px 10px; font-family:'Abril Fatface',serif; font-size:clamp(18px,5vw,24px);
+  background:#fff; cursor:pointer; box-shadow:4px 4px 0 var(--ink); transition:transform .12s}
+.tabs button[aria-selected="true"]{background:var(--pink-deep); color:#fff; transform:rotate(-1deg)}
+.tabs small{font-family:'DM Sans',sans-serif; font-size:13px; font-weight:700; opacity:.8}
+/* ---------- Filtres ---------- */
+.filters{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px}
+.chip{border:3px solid var(--ink); background:#fff; border-radius:999px; padding:7px 14px; cursor:pointer; font-weight:700;
+  box-shadow:2px 2px 0 var(--ink); transition:transform .12s}
+.chip:hover{transform:translate(-1px,-1px)}
+.chip[aria-pressed="true"]{background:var(--pink); color:#fff}
+
+/* ---------- Cartes ---------- */
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:30px}
+.card{background:#fff; border:3px solid var(--ink); border-radius:22px; box-shadow:6px 6px 0 var(--ink); overflow:hidden;
+  transition:transform .2s; display:flex; flex-direction:column}
+.card:nth-child(3n+1){transform:rotate(-1.2deg)}
+.card:nth-child(3n+2){transform:rotate(.9deg)}
+.card:hover{transform:rotate(0) translateY(-3px)}
+.photo{position:relative; aspect-ratio:4/5; background:linear-gradient(160deg,var(--bubble),var(--lilac)); border-bottom:3px solid var(--ink)}
+.photo img{width:100%; height:100%; object-fit:cover; display:block}
+.nav{position:absolute; top:50%; transform:translateY(-50%); width:38px; height:38px; border-radius:50%; border:3px solid var(--ink);
+  background:rgba(255,255,255,.88); font-size:24px; line-height:1; cursor:pointer; display:grid; place-items:center; padding:0 0 3px}
+.nav.prev{left:10px} .nav.next{right:10px}
+.dots{position:absolute; bottom:12px; right:12px; display:flex; gap:5px}
+.dots i{width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,.7); border:2px solid var(--ink)}
+.dots i.on{background:var(--pink)}
+.photo .empty{position:absolute; inset:0; display:grid; place-items:center; text-align:center; font-size:76px}
+.photo .empty small{display:block; font-size:14px; font-family:'Pacifico',cursive; margin-top:4px}
+.size{position:absolute; top:12px; right:12px; width:66px; height:66px; border-radius:50%; background:var(--yellow);
+  border:3px solid var(--ink); display:grid; place-items:center; text-align:center; font-family:'Abril Fatface',serif;
+  line-height:1; transform:rotate(10deg); box-shadow:2px 2px 0 var(--ink)}
+.size small{display:block; font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:.08em}
+.hot{position:absolute; left:-6px; bottom:16px; background:var(--pink-deep); color:#fff; font-weight:700; font-size:13px;
+  padding:6px 14px 6px 16px; border:3px solid var(--ink); border-radius:0 999px 999px 0; display:none}
+.card.contested .hot{display:block}
+.body{padding:16px 18px 18px; display:flex; flex-direction:column; gap:10px; flex:1}
+.body h3{font-family:'Abril Fatface',serif; font-weight:400; font-size:23px; margin:0; line-height:1.15}
+.meta{font-size:14px; font-weight:500; opacity:.75; margin:0}
+.pitch{font-family:'Pacifico',cursive; color:var(--pink-deep); margin:0; font-size:16px; line-height:1.4}
+.like{border:3px solid var(--ink); border-radius:999px; padding:11px 16px; font-weight:700; font-size:16px; cursor:pointer;
+  background:var(--bubble); box-shadow:3px 3px 0 var(--ink); transition:transform .1s, background .15s}
+.like:active{transform:translate(2px,2px); box-shadow:1px 1px 0 var(--ink)}
+.like[aria-pressed="true"]{background:var(--pink-deep); color:#fff}
+.count{font-size:14px; margin:0}
+.names{display:flex; flex-wrap:wrap; gap:6px; min-height:4px}
+.name{background:var(--mint); border:2px solid var(--ink); border-radius:999px; padding:3px 10px; font-size:13px; font-weight:700}
+.name.me{background:var(--yellow)}
+details{border-top:2px dashed var(--pink); padding-top:10px; margin-top:auto}
+summary{cursor:pointer; font-weight:700; list-style:none}
+summary::-webkit-details-marker{display:none}
+.comments{list-style:none; padding:0; margin:10px 0; display:flex; flex-direction:column; gap:8px}
+.comments li{background:var(--cream); border:2px solid var(--ink); border-radius:14px 14px 14px 4px; padding:8px 10px; font-size:14px; line-height:1.4}
+.comments li b{color:var(--pink-deep)}
+.comments li time{display:block; font-size:11px; opacity:.6; margin-top:2px}
+.comments .none{background:none; border:0; padding:0; opacity:.7; font-style:italic}
+form.say{display:flex; gap:6px}
+form.say input{flex:1; min-width:0; border:2px solid var(--ink); border-radius:999px; padding:9px 14px; background:#fff}
+form.say button{border:2px solid var(--ink); background:var(--pink); color:#fff; border-radius:999px; padding:0 14px; font-weight:700; cursor:pointer}
+.emptylist{text-align:center; font-family:'Pacifico',cursive; font-size:20px; padding:30px; display:none}
+
+footer{text-align:center; padding:10px 16px 40px; font-size:14px}
+footer span{background:#fff; border:2px solid var(--ink); border-radius:999px; padding:6px 14px}
+
+/* ---------- Fenêtre prénom ---------- */
+.modal{position:fixed; inset:0; background:rgba(58,13,37,.55); display:none; place-items:center; padding:16px; z-index:10}
+.modal.open{display:grid}
+.modal form{background:var(--cream); border:3px solid var(--ink); border-radius:24px; box-shadow:8px 8px 0 var(--ink);
+  padding:28px 24px; width:min(420px,100%); text-align:center; transform:rotate(-1deg)}
+.modal h2{font-family:'Pacifico',cursive; font-weight:400; font-size:32px; margin:0 0 6px; color:var(--pink-deep)}
+.modal p{margin:0 0 16px}
+.modal input{width:100%; border:3px solid var(--ink); border-radius:999px; padding:12px 18px; font-size:18px; text-align:center; background:#fff}
+.modal button{margin-top:14px; width:100%; border:3px solid var(--ink); border-radius:999px; padding:12px; font-size:17px;
+  font-weight:700; background:var(--pink); color:#fff; box-shadow:var(--shadow); cursor:pointer}
+
+.toast{position:fixed; left:50%; bottom:20px; transform:translateX(-50%) translateY(140%); background:var(--ink); color:#fff;
+  padding:12px 18px; border-radius:999px; font-weight:500; transition:transform .25s; z-index:20; max-width:calc(100% - 32px); text-align:center}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.demo{background:var(--yellow); border:2px solid var(--ink); border-radius:12px; padding:8px 12px; font-size:13px; margin-bottom:16px; display:none}
+</style>
+</head>
+<body>
+
+<header>
+  <span class="kicker">Réunion privée · entre copaines</span>
+  <h1>Tupperware Club</h1>
+  <div class="episode">Vide-dressing · Chaussures & fringues</div>
+  <div class="sticker s1">Tout doit<br>partir !</div>
+  <div class="sticker s2">100 %<br>girl power</div>
+</header>
+
+<div class="ribbon" aria-hidden="true"><span>♥ VIDE-DRESSING ♥ GRATUIT ENTRE NOUS ♥ LIS LE RÈGLEMENT ♥ TALONS, PAILLETTES, LÉOPARD & CIE ♥ RIEN NE SE PERD, TOUT SE TRANSMET ♥</span></div>
+
+<main>
+  <div class="demo" id="demo">Mode démo : les votes ne sont enregistrés que sur cet appareil. Ajoute l'adresse du script Google dans <code>CONFIG.API_URL</code> pour les partager.</div>
+
+  <div class="hello">
+    <p>Coucou <strong id="me">toi</strong> 💋</p>
+    <button class="linkish" id="changeName" type="button">Ce n'est pas moi</button>
+  </div>
+
+  <section class="rules">
+    <h2>Le règlement du club</h2>
+    <p>Clique sur <b>« Je craque »</b> pour te positionner, autant de fois que tu as de coups de cœur. Une question sur la taille, l'état, la coupe ? Laisse un message sous la pièce.</p>
+    <p id="rule"></p>
+    <p id="rdv"></p>
+  </section>
+
+  <div class="tabs" id="tabs" role="tablist"><button type="button" role="tab" data-t="chaussures">👠 Chaussures</button><button type="button" role="tab" data-t="fringues">👗 Fringues</button></div>
+  <div class="filters" id="filters" role="toolbar" aria-label="Filtrer"></div>
+  <div class="grid" id="grid"></div>
+  <p class="emptylist" id="emptylist">Rien par ici, darling.</p>
+</main>
+
+<footer><span>Fait avec amour, laque et paillettes ✨</span></footer>
+
+<div class="modal" id="modal">
+  <form id="nameForm">
+    <h2>Qui es-tu, darling ?</h2>
+    <p>Ton prénom s'affichera à côté de tes coups de cœur.</p>
+    <input id="nameInput" maxlength="30" autocomplete="given-name" placeholder="Ton prénom" required>
+    <button type="submit">Entrer au club 💖</button>
+  </form>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* =========================================================
+   À PERSONNALISER
+   ========================================================= */
+const CONFIG = {
+  // Colle ici l'URL de ton script Google (se termine par /exec). Vide = mode démo.
+  API_URL: "https://script.google.com/macros/s/AKfycbwn4zVnmQX663B2l-GJr_HJU7dRsPSpckPGsQYS66JGuFqUXcZ_KySk1MaRb8EBig33/exec",
+  REGLE: "Si plusieurs d'entre nous craquent pour la même pièce : tirage au sort le jour J.",
+  RDV: "Rendez-vous chez moi, date à confirmer sur le groupe 🍾"
+};
+
+// Une ligne par paire. "photos" = fichiers du dossier photos/, la première sert de couverture.
+// "pointure" vide = pas de pastille ni de filtre pour cette paire.
+const ITEMS = [
+  { id: "p01", titre: "Mules plateforme strass dorées", marque: "Sergio Todzi", pointure: "38-40", etat: "Strass au complet, semelles qui ont dansé", phrase: "Pour les soirs où tu veux qu'on te voie depuis le bout de la rue.", photos: ["photos/p01-a.jpg","photos/p01-b.jpg","photos/p01-c.jpg"] },
+  { id: "p02", titre: "Santiags camel brodées", marque: "", pointure: "39", etat: "Petite trace rose sur une tige", phrase: "Yeehaw, mais en version brunch.", photos: ["photos/p02-a.jpg","photos/p02-b.jpg","photos/p02-c.jpg"] },
+  { id: "p03", titre: "Bottines plateforme patchwork denim", marque: "Lamoda", pointure: "38-40", etat: "Bon état", phrase: "Disco, denim et dix centimètres de confiance en soi.", photos: ["photos/p03-a.jpg","photos/p03-b.jpg"] },
+  { id: "p04", titre: "Bottes denim bout carré", marque: "Semelle cuir, Made in Spain", pointure: "38", etat: "Quelques fils de couture à recouper", phrase: "Le bout carré est revenu. Elles, elles ne sont jamais parties.", photos: ["photos/p04-a.jpg","photos/p04-b.jpg"] },
+  { id: "p05", titre: "Escarpins vernis noirs à lacets", marque: "", pointure: "38-40", etat: "Bon état", phrase: "Pin-up au rendez-vous, lacets qui montent à la cheville.", photos: ["photos/p05-a.jpg"] },
+  { id: "p06", titre: "Crocs plateforme crème", marque: "Crocs", pointure: "38-40", etat: "Un coup d'éponge et c'est reparti", phrase: "Le confort de la Crocs, la hauteur du talon. On a tout.", photos: ["photos/p06-a.jpg","photos/p06-b.jpg"] },
+  { id: "p07", titre: "Crocs lilas pailletées", marque: "Crocs", pointure: "39-40", etat: "Portées, paillettes intactes", phrase: "Lilas et paillettes : la Crocs en robe de bal.", photos: ["photos/p07-a.jpg","photos/p07-b.jpg"] },
+  { id: "p08", titre: "Mocassins noirs effet python", marque: "Bershka", pointure: "38", etat: "Cuir un peu marqué", phrase: "Uniforme de pensionnat, attitude de cheffe de bande.", photos: ["photos/p08-a.jpg"] },
+  { id: "p09", titre: "Sandales sport plateforme", marque: "", pointure: "38-40", etat: "À rafraîchir", phrase: "Pour les festivals et les marchés du dimanche.", photos: ["photos/p09-a.jpg","photos/p09-b.jpg"] },
+  { id: "p10", titre: "Mules sherpa nouées", marque: "", pointure: "38-40", etat: "Bien vécues, semelle marquée", phrase: "Un nuage pour l'appartement.", photos: ["photos/p10-a.jpg"] },
+  { id: "p11", titre: "Air Max 1 gris et violet", marque: "Nike", pointure: "38-40", etat: "Semelle jaunie, daim patiné", phrase: "Vintage pour de vrai, pas pour le marketing.", photos: ["photos/p11-a.jpg"] },
+  { id: "p12", titre: "Baskets de running blanches", marque: "Nike Revolution", pointure: "38-40", etat: "Portées, à laver", phrase: "Pour courir. Ou faire semblant, on ne juge pas.", photos: ["photos/p12-a.jpg","photos/p12-b.jpg"] },
+  { id: "p13", titre: "Baskets blanches chunky", marque: "", pointure: "38-40", etat: "À nettoyer", phrase: "Années 2000, le retour. Tu avais raison de les garder.", photos: ["photos/p13-a.jpg","photos/p13-b.jpg"] },
+  { id: "p14", titre: "Tongs noires", marque: "", pointure: "38-40", etat: "Très portées", phrase: "Pour la plage, la piscine et rien d'autre.", photos: ["photos/p14-a.jpg"] },
+  { id: "p15", titre: "Sandales à brides cloutées", marque: "Minelli", pointure: "40", etat: "Talons un peu frottés, clous au complet", phrase: "Talon aiguille, petits clous, grand effet.", photos: ["photos/p15-a.jpg","photos/p15-b.jpg","photos/p15-c.jpg"] },
+  { id: "p16", titre: "Sandales vernies plateforme XXL", marque: "", pointure: "39", etat: "Très bon état, vernis brillant", phrase: "Vingt centimètres au-dessus du patriarcat.", photos: ["photos/p16-a.jpg","photos/p16-b.jpg","photos/p16-c.jpg"] },
+
+  // ---------- FRINGUES ("taille" au lieu de "pointure") ----------
+  { id: "f01", cat: "fringues", titre: "Pantalon métallisé doré à étoiles", marque: "Nasty Gal", taille: "34", etat: "Très bon état", phrase: "Deux étoiles sur les fesses. Le reste du monde n'a plus qu'à suivre.", photos: ["photos/f01-a.jpg","photos/f01-b.jpg","photos/f01-c.jpg"] },
+  { id: "f02", cat: "fringues", titre: "Robe arc-en-ciel en tulle", marque: "", taille: "S-M", etat: "Bon état", phrase: "Un cupcake, mais en robe.", photos: ["photos/f02-a.jpg"] },
+  { id: "f03", cat: "fringues", titre: "Nuisette satinée tie-dye lilas et jaune", marque: "Bershka", taille: "S", etat: "Bon état", phrase: "Robe de soirée ou de lendemain de soirée, c'est toi qui vois.", photos: ["photos/f03-a.jpg","photos/f03-b.jpg"] },
+  { id: "f04", cat: "fringues", titre: "Veste racing en simili cuir", marque: "", taille: "S-M", etat: "Très bon état", phrase: "Pit stop obligatoire chez toi.", photos: ["photos/f04-a.jpg"] },
+  { id: "f05", cat: "fringues", titre: "Blazer python à col noir", marque: "Made in Italy", taille: "S-M", etat: "Bon état", phrase: "Pour les réunions où tu veux qu'on t'écoute.", photos: ["photos/f05-a.jpg"] },
+  { id: "f06", cat: "fringues", titre: "Robe en mesh imprimée, jupe volantée", marque: "", taille: "S-M", etat: "Très bon état", phrase: "Y2K, drapée, et pas du tout discrète.", photos: ["photos/f06-a.jpg"] },
+  { id: "f07", cat: "fringues", titre: "Veste vinyle noire, col et poignets fausse fourrure", marque: "", taille: "S-M", etat: "Bon état", phrase: "Cruella a des goûts, et elle a raison.", photos: ["photos/f07-a.jpg"] },
+  { id: "f08", cat: "fringues", titre: "Kimono long en tulle plissé jaune", marque: "", taille: "Unique", etat: "Très bon état", phrase: "On entre en peignoir comme Marilyn, on ressort en star.", photos: ["photos/f08-a.jpg"] },
+  { id: "f09", cat: "fringues", titre: "Pull col V vert d'eau", marque: "From Future", taille: "S-M", etat: "Un peu froissé, très doux", phrase: "La douceur, version pistache.", photos: ["photos/f09-a.jpg"] },
+  { id: "f10", cat: "fringues", titre: "Robe crochet orange lurex", marque: "", taille: "S-M", etat: "Très bon état", phrase: "Sur un maillot en été, sur une nuisette en soirée.", photos: ["photos/f10-a.jpg"] },
+  { id: "f11", cat: "fringues", titre: "Salopette-robe en jean destroy", marque: "Pull&Bear", taille: "34", etat: "Bon état, effets usés d'origine", phrase: "Clueless en week-end à la campagne.", photos: ["photos/f11-a.jpg"] },
+  { id: "f12", cat: "fringues", titre: "Top mesh palmiers vert acide", marque: "Bershka", taille: "S", etat: "Très bon état", phrase: "Les vacances, mais portées en ville.", photos: ["photos/f12-a.jpg"] },
+  { id: "f13", cat: "fringues", titre: "Gilet sans manches en maille bouclette crème", marque: "", taille: "S-M", etat: "Bon état", phrase: "Sur une chemise ou à même la peau, toujours chic.", photos: ["photos/f13-a.jpg"] },
+  { id: "f14", cat: "fringues", titre: "Jupe longue python camel", marque: "Stradivarius", taille: "S", etat: "Très bon état", phrase: "Fluide, sauvage, parfaite avec des santiags (coucou la paire n° 2).", photos: ["photos/f14-a.jpg","photos/f14-b.jpg"] },
+  { id: "f15", cat: "fringues", titre: "Jean mom brut", marque: "Zara", taille: "S-M", etat: "Bon état", phrase: "Le jean qui va avec tout, même avec rien.", photos: ["photos/f15-a.jpg"] },
+  { id: "f16", cat: "fringues", titre: "Bermuda en jean léopard", marque: "Bershka", taille: "34", etat: "Très bon état", phrase: "Le léopard, c'est un neutre. Même en bermuda.", photos: ["photos/f16-a.jpg","photos/f16-b.jpg"] },
+  { id: "f17", cat: "fringues", titre: "Pantalon en lin à gros boutons", marque: "Salut Beauté", taille: "38", etat: "Bon état", phrase: "Étiquette officielle : « Sublimateur de fessier depuis 2019 ». On ne discute pas.", photos: ["photos/f17-a.jpg","photos/f17-b.jpg"] },
+  { id: "f18", cat: "fringues", titre: "Combinaison en velours côtelé crème", marque: "& Other Stories", taille: "36", etat: "Bon état", phrase: "Mécanicienne chic, version Los Angeles.", photos: ["photos/f18-a.jpg","photos/f18-b.jpg"] },
+  { id: "f19", cat: "fringues", titre: "Gilet brodé bordé de fausse fourrure", marque: "", taille: "S-M", etat: "Très bon état", phrase: "Penny Lane part en tournée, elle te prête son gilet.", photos: ["photos/f19-a.jpg","photos/f19-b.jpg"] },
+  { id: "f20", cat: "fringues", titre: "Robe crochet noire", marque: "", taille: "S-M", etat: "Très bon état", phrase: "La version nuit de sa sœur orange.", photos: ["photos/f20-a.jpg","photos/f20-b.jpg"] },
+  { id: "f21", cat: "fringues", titre: "Blazer en jersey noir, étoiles sequins aux coudes", marque: "Made in Italy", taille: "S-M", etat: "Bon état", phrase: "Sérieuse de face, rock'n'roll quand tu lèves le bras.", photos: ["photos/f21-a.jpg","photos/f21-b.jpg"] },
+  { id: "f22", cat: "fringues", titre: "Robe chemise longue léopard", marque: "", taille: "S-M", etat: "Très bon état", phrase: "Ouverte en manteau léger ou boutonnée en robe : léopard dans les deux cas.", photos: ["photos/f22-a.jpg"] },
+  { id: "f23", cat: "fringues", titre: "Cardigan long rayé rose bonbon", marque: "", taille: "S", etat: "Taches visibles sur le devant, à détacher", phrase: "Candy stripe pour les braves qui aiment le détachant.", photos: ["photos/f23-a.jpg"] },
+  { id: "f24", cat: "fringues", titre: "Veste vintage zébrée à épaulettes", marque: "Vintage", taille: "46 vintage", etat: "Bon état", phrase: "Années 80, épaulettes et attitude de boss. Les tailles vintage taillent petit.", photos: ["photos/f24-a.jpg"] },
+  { id: "f25", cat: "fringues", titre: "Pull damier gris et crème", marque: "& Other Stories", taille: "S-M", etat: "Très bon état", phrase: "Le pull cocooning qui joue aux dames.", photos: ["photos/f25-a.jpg"] }
+];
+
+/* =========================================================
+   Moteur (pas besoin de toucher en dessous)
+   ========================================================= */
+const $ = s => document.querySelector(s);
+const store = {
+  get(k){ try{ return localStorage.getItem(k) }catch(e){ return null } },
+  set(k,v){ try{ localStorage.setItem(k,v) }catch(e){} }
+};
+const same = (a,b) => a.trim().toLowerCase() === b.trim().toLowerCase();
+let me = store.get("tupperware-name") || "";
+let state = { likes: [], comments: [] };
+let filter = "all";
+let tab = store.get("tupperware-tab") === "fringues" ? "fringues" : "chaussures";
+const catOf = it => it.cat || "chaussures";
+const sizeOf = it => it.taille || it.pointure || "";
+const ORDRE = ["XS","34","36","S","S-M","M","38","38-40","39","39-40","40","L","46 vintage","Unique"];
+const rang = s => { const i = ORDRE.indexOf(s); return i < 0 ? 99 : i; };
+const DEMO = !CONFIG.API_URL;
+
+/* ----- Données ----- */
+let demoMem = null;
+function demoLoad(){
+  if (!demoMem){ try{ demoMem = JSON.parse(store.get("tupperware-demo")) }catch(e){} }
+  return demoMem || (demoMem = { likes: [{item:"p01",name:"Sophie"},{item:"p01",name:"Leïla"},{item:"p03",name:"Marion"}],
+    comments: [{item:"p01",name:"Sophie",text:"Elles taillent grand ou petit ? Je fais du 39.",date:new Date().toISOString()}] });
+}
+function demoSave(){ store.set("tupperware-demo", JSON.stringify(demoMem)) }
+
+function applyLocal(p){
+  const s = DEMO ? demoLoad() : state;
+  if (p.action === "like" && !s.likes.some(l => l.item===p.item && same(l.name,p.name))) s.likes.push({item:p.item,name:p.name});
+  if (p.action === "unlike") s.likes = s.likes.filter(l => !(l.item===p.item && same(l.name,p.name)));
+  if (p.action === "comment") s.comments.push({item:p.item,name:p.name,text:p.text,date:new Date().toISOString()});
+  if (DEMO){ demoSave(); state = JSON.parse(JSON.stringify(s)); }
+}
+
+async function load(){
+  if (DEMO){ state = JSON.parse(JSON.stringify(demoLoad())); return refresh(); }
+  try{
+    const r = await fetch(CONFIG.API_URL, {cache:"no-store"});
+    state = await r.json(); refresh();
+  }catch(e){ toast("Le club ne répond pas, réessaie dans un instant") }
+}
+
+async function send(p){
+  applyLocal(p); refresh();
+  if (DEMO) return;
+  try{
+    // Envoi en text/plain pour éviter les blocages CORS de Google
+    const r = await fetch(CONFIG.API_URL, {method:"POST", body: JSON.stringify(p)});
+    const d = await r.json();
+    if (d.error) throw new Error(d.error);
+    state = d; refresh();
+  }catch(e){ toast("Oups, ça n'est pas passé. On réessaie ?"); load(); }
+}
+
+/* ----- Affichage ----- */
+function buildFilters(){
+  const mot = tab === "fringues" ? "Taille " : "Pointure ";
+  const sizes = [...new Set(ITEMS.filter(i => catOf(i) === tab).map(sizeOf).filter(Boolean))].sort((a,b)=>rang(a)-rang(b));
+  const opts = [["all","Tout voir"], ...sizes.map(s => [s, mot + s]), ["mine","Mes coups de cœur 💘"]];
+  const box = $("#filters"); box.innerHTML = "";
+  opts.forEach(([v,label]) => {
+    const b = document.createElement("button");
+    b.className = "chip"; b.type = "button"; b.textContent = label; b.dataset.v = v;
+    b.setAttribute("aria-pressed", v === filter);
+    b.onclick = () => { filter = v; box.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.v === v)); applyFilter(); };
+    box.appendChild(b);
+  });
+}
+
+function buildCards(){
+  const grid = $("#grid");
+  ITEMS.forEach(it => {
+    const c = document.createElement("article");
+    c.className = "card"; c.id = "card-" + it.id;
+    c.innerHTML = `
+      <div class="photo">
+        ${(it.photos||[]).length ? `<img alt="" loading="lazy">` : `<div class="empty"><div>${catOf(it)==="fringues"?"👗":"👠"}<small>photo à venir</small></div></div>`}
+        ${(it.photos||[]).length > 1 ? `<button class="nav prev" type="button" aria-label="Photo précédente">‹</button><button class="nav next" type="button" aria-label="Photo suivante">›</button><div class="dots"></div>` : ""}
+        ${sizeOf(it) ? `<div class="size"><div><small>${it.taille ? "TAILLE" : "POINTURE"}</small><span></span></div></div>` : ""}
+        <div class="hot">🔥 Ça se bat !</div>
+      </div>
+      <div class="body">
+        <h3></h3><p class="meta"></p><p class="pitch"></p>
+        <button class="like" type="button" aria-pressed="false"></button>
+        <p class="count"></p>
+        <div class="names"></div>
+        <details>
+          <summary></summary>
+          <ul class="comments"></ul>
+          <form class="say"><input maxlength="400" placeholder="Une question, un mot doux…" aria-label="Ton message"><button type="submit">Envoyer</button></form>
+        </details>
+      </div>`;
+    const pics = it.photos || [];
+    if (pics.length){
+      const img = c.querySelector("img"); let k = 0;
+      const dots = c.querySelector(".dots");
+      const show = n => {
+        k = (n + pics.length) % pics.length; img.src = pics[k];
+        img.alt = it.titre + " (photo " + (k+1) + "/" + pics.length + ")";
+        if (dots) dots.querySelectorAll("i").forEach((d,j) => d.classList.toggle("on", j === k));
+      };
+      if (dots) pics.forEach(() => dots.appendChild(document.createElement("i")));
+      if (pics.length > 1){
+        c.querySelector(".prev").onclick = () => show(k-1);
+        c.querySelector(".next").onclick = () => show(k+1);
+        let x0 = null;
+        img.addEventListener("touchstart", e => { x0 = e.touches[0].clientX }, {passive:true});
+        img.addEventListener("touchend", e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) show(k + (dx < 0 ? 1 : -1)); x0 = null; });
+      }
+      show(0);
+    }
+    if (sizeOf(it)) c.querySelector(".size span").textContent = sizeOf(it);
+    c.querySelector("h3").textContent = it.titre;
+    c.querySelector(".meta").textContent = [it.marque, it.etat].filter(Boolean).join(" · ");
+    c.querySelector(".pitch").textContent = it.phrase || "";
+    c.querySelector(".like").onclick = () => {
+      if (!askName()) return;
+      const liked = state.likes.some(l => l.item===it.id && same(l.name,me));
+      send({action: liked ? "unlike" : "like", item: it.id, name: me});
+      if (!liked) toast("C'est noté, " + me + " 💘");
+    };
+    c.querySelector("form").onsubmit = e => {
+      e.preventDefault();
+      if (!askName()) return;
+      const input = e.target.querySelector("input"); const text = input.value.trim();
+      if (!text) return;
+      input.value = "";
+      send({action:"comment", item: it.id, name: me, text});
+    };
+    grid.appendChild(c);
+  });
+}
+
+function fmtDate(d){
+  const t = new Date(d); if (isNaN(t)) return "";
+  return t.toLocaleDateString("fr-FR",{day:"numeric",month:"short"}) + " à " + t.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
+}
+
+function refresh(){
+  $("#me").textContent = me || "toi";
+  ITEMS.forEach(it => {
+    const c = document.getElementById("card-" + it.id); if (!c) return;
+    const likes = state.likes.filter(l => l.item === it.id);
+    const mine = !!me && likes.some(l => same(l.name, me));
+    const btn = c.querySelector(".like");
+    btn.setAttribute("aria-pressed", mine);
+    btn.textContent = mine ? "Je craque 💘 (retirer)" : "Je craque 💖";
+    c.classList.toggle("contested", likes.length >= 2);
+    c.dataset.mine = mine;
+    c.querySelector(".count").textContent = likes.length === 0 ? "Personne encore… à toi de jouer."
+      : likes.length === 1 ? "1 prétendante" : likes.length + " prétendantes";
+    const names = c.querySelector(".names"); names.innerHTML = "";
+    likes.forEach(l => { const s = document.createElement("span"); s.className = "name" + (me && same(l.name,me) ? " me" : ""); s.textContent = l.name; names.appendChild(s); });
+    const coms = state.comments.filter(m => m.item === it.id);
+    c.querySelector("summary").textContent = coms.length ? `💬 ${coms.length} message${coms.length>1?"s":""}` : "💬 Poser une question";
+    const ul = c.querySelector(".comments"); ul.innerHTML = "";
+    if (!coms.length){ const li = document.createElement("li"); li.className = "none"; li.textContent = "Pas encore de message."; ul.appendChild(li); }
+    coms.forEach(m => {
+      const li = document.createElement("li");
+      const b = document.createElement("b"); b.textContent = m.name + " : ";
+      const time = document.createElement("time"); time.textContent = fmtDate(m.date);
+      li.append(b, document.createTextNode(m.text), time); ul.appendChild(li);
+    });
+  });
+  applyFilter();
+}
+
+function applyFilter(){
+  let shown = 0;
+  ITEMS.forEach(it => {
+    const c = document.getElementById("card-" + it.id);
+    const ok = catOf(it) === tab && (filter === "all" || (filter === "mine" ? c.dataset.mine === "true" : sizeOf(it) === filter));
+    c.style.display = ok ? "" : "none"; if (ok) shown++;
+  });
+  $("#emptylist").style.display = shown ? "none" : "block";
+}
+
+function buildTabs(){
+  document.querySelectorAll("#tabs button").forEach(b => {
+    const n = ITEMS.filter(i => catOf(i) === b.dataset.t).length;
+    b.insertAdjacentHTML("beforeend", ` <small>(${n})</small>`);
+    b.setAttribute("aria-selected", b.dataset.t === tab);
+    b.onclick = () => {
+      tab = b.dataset.t; filter = "all"; store.set("tupperware-tab", tab);
+      document.querySelectorAll("#tabs button").forEach(x => x.setAttribute("aria-selected", x.dataset.t === tab));
+      buildFilters(); applyFilter();
+    };
+  });
+}
+
+/* ----- Prénom ----- */
+function askName(){ if (me) return true; openModal(); return false; }
+function openModal(){ $("#modal").classList.add("open"); $("#nameInput").value = me; setTimeout(() => $("#nameInput").focus(), 50); }
+$("#nameForm").onsubmit = e => {
+  e.preventDefault();
+  const v = $("#nameInput").value.trim(); if (!v) return;
+  me = v; store.set("tupperware-name", me);
+  $("#modal").classList.remove("open"); refresh();
+};
+$("#changeName").onclick = openModal;
+
+let tt;
+function toast(msg){ const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("show"), 2600); }
+
+/* ----- Démarrage ----- */
+$("#rule").textContent = CONFIG.REGLE;
+$("#rdv").textContent = CONFIG.RDV;
+if (DEMO) $("#demo").style.display = "block";
+buildTabs(); buildFilters(); buildCards(); load();
+if (!me) openModal();
+setInterval(() => { if (!document.hidden) load(); }, 20000);
+document.addEventListener("visibilitychange", () => { if (!document.hidden) load(); });
+</script>
+</body>
+</html>
