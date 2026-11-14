@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tupperware Club · Vide-dressing</title>
-<meta name="description" content="Les chaussures de Jenn cherchent une nouvelle maison. Viens te positionner 💋">
+<meta name="description" content="Le vide-dressing collectif du Tupperware Club. Viens craquer, viens donner 💋">
 <meta property="og:title" content="Tupperware Club · Vide-dressing">
-<meta property="og:description" content="Les chaussures de Jenn cherchent une nouvelle maison. Viens te positionner 💋">
+<meta property="og:description" content="Le vide-dressing collectif du Tupperware Club. Viens craquer, viens donner 💋">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Pacifico&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -65,6 +65,33 @@ main{max-width:1100px; margin:0 auto; padding:22px 16px 40px}
 .rules h2{font-family:'Abril Fatface',serif; font-weight:400; margin:0 0 8px; font-size:24px; color:var(--pink-deep)}
 .rules p{margin:6px 0; line-height:1.5}
 
+/* ---------- Je donne aussi ---------- */
+.givebtn{display:block; width:100%; margin:0 0 22px; border:3px solid var(--ink); border-radius:999px; padding:14px; font-size:18px; font-weight:700;
+  background:var(--yellow); box-shadow:4px 4px 0 var(--ink); cursor:pointer; transition:transform .1s}
+.givebtn:active{transform:translate(2px,2px); box-shadow:2px 2px 0 var(--ink)}
+.giver{margin:0; align-self:flex-start; background:var(--lilac); border:2px solid var(--ink); border-radius:999px; padding:3px 10px; font-size:12px; font-weight:700}
+.remove{border:2px dashed var(--pink-deep); background:#fff; color:var(--pink-deep); border-radius:999px; padding:8px; font-weight:700; cursor:pointer}
+.modal form.give{text-align:left; max-height:calc(100vh - 32px); overflow:auto; transform:none}
+.modal form.give h2, .modal form.give > p{text-align:center}
+.give .fld{display:block; font-weight:700; font-size:14px; margin:10px 0 0}
+.give .fld input, .give .fld select{display:block; width:100%; margin-top:4px; border:2px solid var(--ink); border-radius:12px; padding:10px 12px;
+  font-size:16px; text-align:left; background:#fff}
+.give .row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+.give .seg{display:flex; gap:8px}
+.give .seg label{flex:1}
+.give .seg input{position:absolute; opacity:0; width:1px; height:1px}
+.give .seg span{display:block; text-align:center; border:2px solid var(--ink); border-radius:999px; padding:9px; font-weight:700; cursor:pointer; background:#fff}
+.give .seg input:checked + span{background:var(--pink); color:#fff}
+.give .seg input:focus-visible + span{outline:3px solid var(--lilac)}
+.give .file{display:block; margin-top:14px; text-align:center; border:3px dashed var(--pink-deep); border-radius:16px; padding:14px; font-weight:700; cursor:pointer; background:var(--bubble)}
+.give .file input{display:none}
+.previews{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap}
+.pv{position:relative; width:84px; height:105px}
+.pv img{width:100%; height:100%; object-fit:cover; border-radius:10px; border:2px solid var(--ink)}
+.modal .pv button{position:absolute; top:-8px; right:-8px; width:26px; height:26px; margin:0; padding:0; border-radius:50%; font-size:16px; line-height:1;
+  box-shadow:none; border:2px solid var(--ink); background:#fff; color:var(--ink)}
+.modal .give .cancel{background:none; border:0; box-shadow:none; color:var(--ink); text-decoration:underline; font-weight:500; margin-top:6px}
+.modal button:disabled{opacity:.6; cursor:wait}
 /* ---------- Onglets ---------- */
 .tabs{display:flex; gap:10px; margin-bottom:16px}
 .tabs button{flex:1; border:3px solid var(--ink); border-radius:16px; padding:12px 10px; font-family:'Abril Fatface',serif; font-size:clamp(18px,5vw,24px);
@@ -152,12 +179,12 @@ footer span{background:#fff; border:2px solid var(--ink); border-radius:999px; p
 <header>
   <span class="kicker">Réunion privée · entre copaines</span>
   <h1>Tupperware Club</h1>
-  <div class="episode">Vide-dressing · Chaussures & fringues</div>
+  <div class="episode">Vide-dressing collectif · Chaussures & fringues</div>
   <div class="sticker s1">Tout doit<br>partir !</div>
   <div class="sticker s2">100 %<br>girl power</div>
 </header>
 
-<div class="ribbon" aria-hidden="true"><span>♥ VIDE-DRESSING ♥ GRATUIT ENTRE NOUS ♥ LIS LE RÈGLEMENT ♥ TALONS, PAILLETTES, LÉOPARD & CIE ♥ RIEN NE SE PERD, TOUT SE TRANSMET ♥</span></div>
+<div class="ribbon" aria-hidden="true"><span>♥ VIDE-DRESSING ♥ GRATUIT ENTRE NOUS ♥ TOI AUSSI, DONNE ! ♥ LIS LE RÈGLEMENT ♥ TALONS, PAILLETTES, LÉOPARD & CIE ♥ RIEN NE SE PERD, TOUT SE TRANSMET ♥</span></div>
 
 <main>
   <div class="demo" id="demo">Mode démo : les votes ne sont enregistrés que sur cet appareil. Ajoute l'adresse du script Google dans <code>CONFIG.API_URL</code> pour les partager.</div>
@@ -170,11 +197,14 @@ footer span{background:#fff; border:2px solid var(--ink); border-radius:999px; p
   <section class="rules">
     <h2>Le règlement du club</h2>
     <p>Clique sur <b>« Je craque »</b> pour te positionner, autant de fois que tu as de coups de cœur. Une question sur la taille, l'état, la coupe ? Laisse un message sous la pièce.</p>
+    <p>Toi aussi tu as des trucs qui dorment dans ton placard ? Clique sur <b>« Je donne aussi »</b>, ajoute tes photos, et ta pièce apparaît direct en vitrine à ton prénom.</p>
     <p id="rule"></p>
     <p id="rdv"></p>
   </section>
 
-  <div class="tabs" id="tabs" role="tablist"><button type="button" role="tab" data-t="chaussures">👠 Chaussures</button><button type="button" role="tab" data-t="fringues">👗 Fringues</button></div>
+  <button class="givebtn" id="giveBtn" type="button">🎁 Je donne aussi</button>
+
+  <div class="tabs" id="tabs" role="tablist"><button type="button" role="tab" data-t="chaussures">👠 Chaussures <small></small></button><button type="button" role="tab" data-t="fringues">👗 Fringues <small></small></button></div>
   <div class="filters" id="filters" role="toolbar" aria-label="Filtrer"></div>
   <div class="grid" id="grid"></div>
   <p class="emptylist" id="emptylist">Rien par ici, darling.</p>
@@ -190,6 +220,27 @@ footer span{background:#fff; border:2px solid var(--ink); border-radius:999px; p
     <button type="submit">Entrer au club 💖</button>
   </form>
 </div>
+<div class="modal" id="giveModal">
+  <form id="giveForm" class="give" novalidate>
+    <h2>Je donne aussi 🎁</h2>
+    <p>Ta pièce apparaît tout de suite sur le site, à ton prénom. Tu pourras la retirer quand tu veux.</p>
+    <div class="seg" role="radiogroup" aria-label="Catégorie">
+      <label><input type="radio" name="cat" value="chaussures" checked><span>👠 Chaussures</span></label>
+      <label><input type="radio" name="cat" value="fringues"><span>👗 Fringue</span></label>
+    </div>
+    <label class="fld">Quoi ?<input name="titre" maxlength="80" placeholder="Ex. : Bottines vernies rouges"></label>
+    <div class="row">
+      <label class="fld"><span id="tailleLbl">Pointure</span><input name="taille" maxlength="12" placeholder="38"></label>
+      <label class="fld">Marque<input name="marque" maxlength="40" placeholder="Facultatif"></label>
+    </div>
+    <label class="fld">État<select name="etat"><option>Neuf</option><option>Comme neuf</option><option selected>Très bon état</option><option>Bon état</option><option>Bien porté</option><option>À rafraîchir</option></select></label>
+    <label class="fld">Ta petite phrase<input name="phrase" maxlength="140" placeholder="Facultatif, mais on adore"></label>
+    <label class="file" id="fileLbl">📸 Ajouter 1 à 3 photos<input type="file" name="photos" accept="image/*" multiple></label>
+    <div class="previews" id="previews"></div>
+    <button type="submit" id="giveSubmit">Mettre en vitrine 💖</button>
+    <button type="button" class="cancel" id="giveCancel">Annuler</button>
+  </form>
+</div>
 <div class="toast" id="toast" role="status"></div>
 
 <script>
@@ -198,6 +249,7 @@ footer span{background:#fff; border:2px solid var(--ink); border-radius:999px; p
    ========================================================= */
 const CONFIG = {
   // Colle ici l'URL de ton script Google (se termine par /exec). Vide = mode démo.
+  HOTE: "Jenn", // la donneuse des pièces listées ci-dessous
   API_URL: "https://script.google.com/macros/s/AKfycbwn4zVnmQX663B2l-GJr_HJU7dRsPSpckPGsQYS66JGuFqUXcZ_KySk1MaRb8EBig33/exec",
   REGLE: "Si plusieurs d'entre nous craquent pour la même pièce : tirage au sort le jour J.",
   RDV: "Rendez-vous chez moi, date à confirmer sur le groupe 🍾"
@@ -259,23 +311,37 @@ const store = {
   get(k){ try{ return localStorage.getItem(k) }catch(e){ return null } },
   set(k,v){ try{ localStorage.setItem(k,v) }catch(e){} }
 };
-const same = (a,b) => a.trim().toLowerCase() === b.trim().toLowerCase();
+const same = (a,b) => String(a||"").trim().toLowerCase() === String(b||"").trim().toLowerCase();
 let me = store.get("tupperware-name") || "";
-let state = { likes: [], comments: [] };
+let state = { likes: [], comments: [], pieces: [] };
 let filter = "all";
 let tab = store.get("tupperware-tab") === "fringues" ? "fringues" : "chaussures";
+const DEMO = !CONFIG.API_URL;
 const catOf = it => it.cat || "chaussures";
 const sizeOf = it => it.taille || it.pointure || "";
-const ORDRE = ["XS","34","36","S","S-M","M","38","38-40","39","39-40","40","L","46 vintage","Unique"];
+const giverOf = it => it.donneuse || CONFIG.HOTE;
+const ORDRE = ["XS","34","35","36","37","S","S-M","M","38","38-40","39","39-40","40","41","42","L","XL","46 vintage","Unique"];
 const rang = s => { const i = ORDRE.indexOf(s); return i < 0 ? 99 : i; };
-const DEMO = !CONFIG.API_URL;
+const norm = d => ({ likes: d.likes || [], comments: d.comments || [], pieces: d.pieces || [] });
+const imgUrl = id => /^(data:|https?:|photos\/)/.test(id) ? id : "https://drive.google.com/thumbnail?id=" + encodeURIComponent(id) + "&sz=w1000";
+
+function dynItems(){
+  return (state.pieces || []).map(p => {
+    const f = p.cat === "fringues";
+    return { id: p.id, cat: f ? "fringues" : "chaussures", titre: p.titre, marque: p.marque,
+      taille: f ? p.taille : "", pointure: f ? "" : p.taille, etat: p.etat, phrase: p.phrase,
+      photos: (p.photos || []).map(imgUrl), donneuse: p.name, dyn: true };
+  });
+}
+const allItems = () => ITEMS.concat(dynItems());
 
 /* ----- Données ----- */
 let demoMem = null;
 function demoLoad(){
   if (!demoMem){ try{ demoMem = JSON.parse(store.get("tupperware-demo")) }catch(e){} }
+  if (demoMem && !demoMem.pieces) demoMem.pieces = [];
   return demoMem || (demoMem = { likes: [{item:"p01",name:"Sophie"},{item:"p01",name:"Leïla"},{item:"p03",name:"Marion"}],
-    comments: [{item:"p01",name:"Sophie",text:"Elles taillent grand ou petit ? Je fais du 39.",date:new Date().toISOString()}] });
+    comments: [{item:"p01",name:"Sophie",text:"Elles taillent grand ou petit ? Je fais du 39.",date:new Date().toISOString()}], pieces: [] });
 }
 function demoSave(){ store.set("tupperware-demo", JSON.stringify(demoMem)) }
 
@@ -284,106 +350,138 @@ function applyLocal(p){
   if (p.action === "like" && !s.likes.some(l => l.item===p.item && same(l.name,p.name))) s.likes.push({item:p.item,name:p.name});
   if (p.action === "unlike") s.likes = s.likes.filter(l => !(l.item===p.item && same(l.name,p.name)));
   if (p.action === "comment") s.comments.push({item:p.item,name:p.name,text:p.text,date:new Date().toISOString()});
+  if (p.action === "remove") s.pieces = s.pieces.filter(x => !(x.id===p.item && same(x.name,p.name)));
+  if (p.action === "add") s.pieces.push(Object.assign({ id: "u" + Date.now().toString(36), name: p.name }, p.piece,
+    { photos: p.images.map(b => "data:image/jpeg;base64," + b) }));
   if (DEMO){ demoSave(); state = JSON.parse(JSON.stringify(s)); }
 }
 
 async function load(){
-  if (DEMO){ state = JSON.parse(JSON.stringify(demoLoad())); return refresh(); }
+  if (DEMO){ state = norm(JSON.parse(JSON.stringify(demoLoad()))); return refresh(); }
   try{
     const r = await fetch(CONFIG.API_URL, {cache:"no-store"});
-    state = await r.json(); refresh();
+    const d = await r.json();
+    if (d.error) throw new Error(d.error);
+    state = norm(d); refresh();
   }catch(e){ toast("Le club ne répond pas, réessaie dans un instant") }
 }
 
 async function send(p){
-  applyLocal(p); refresh();
-  if (DEMO) return;
+  if (DEMO || p.action !== "add"){ applyLocal(p); refresh(); }
+  if (DEMO) return true;
   try{
     // Envoi en text/plain pour éviter les blocages CORS de Google
     const r = await fetch(CONFIG.API_URL, {method:"POST", body: JSON.stringify(p)});
     const d = await r.json();
     if (d.error) throw new Error(d.error);
-    state = d; refresh();
-  }catch(e){ toast("Oups, ça n'est pas passé. On réessaie ?"); load(); }
+    state = norm(d); refresh();
+    return true;
+  }catch(e){
+    toast(p.action === "add" ? "L'envoi n'est pas passé, réessaie dans un instant" : "Oups, ça n'est pas passé. On réessaie ?");
+    load(); return false;
+  }
 }
 
 /* ----- Affichage ----- */
 function buildFilters(){
+  const items = allItems().filter(i => catOf(i) === tab);
   const mot = tab === "fringues" ? "Taille " : "Pointure ";
-  const sizes = [...new Set(ITEMS.filter(i => catOf(i) === tab).map(sizeOf).filter(Boolean))].sort((a,b)=>rang(a)-rang(b));
+  const sizes = [...new Set(items.map(sizeOf).filter(Boolean))].sort((a,b)=>rang(a)-rang(b));
   const opts = [["all","Tout voir"], ...sizes.map(s => [s, mot + s]), ["mine","Mes coups de cœur 💘"]];
-  const box = $("#filters"); box.innerHTML = "";
+  if (me && allItems().some(i => same(giverOf(i), me))) opts.push(["gift","Ce que je donne 🎁"]);
+  if (!opts.some(o => o[0] === filter)) filter = "all";
+  const box = $("#filters");
+  const sig = opts.map(o => o[0]).join("|") + "#" + filter;
+  if (box.dataset.sig === sig) return;
+  box.dataset.sig = sig; box.innerHTML = "";
   opts.forEach(([v,label]) => {
     const b = document.createElement("button");
     b.className = "chip"; b.type = "button"; b.textContent = label; b.dataset.v = v;
     b.setAttribute("aria-pressed", v === filter);
-    b.onclick = () => { filter = v; box.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.v === v)); applyFilter(); };
+    b.onclick = () => { filter = v; buildFilters(); applyFilter(); };
     box.appendChild(b);
   });
 }
 
-function buildCards(){
-  const grid = $("#grid");
-  ITEMS.forEach(it => {
-    const c = document.createElement("article");
-    c.className = "card"; c.id = "card-" + it.id;
-    c.innerHTML = `
-      <div class="photo">
-        ${(it.photos||[]).length ? `<img alt="" loading="lazy">` : `<div class="empty"><div>${catOf(it)==="fringues"?"👗":"👠"}<small>photo à venir</small></div></div>`}
-        ${(it.photos||[]).length > 1 ? `<button class="nav prev" type="button" aria-label="Photo précédente">‹</button><button class="nav next" type="button" aria-label="Photo suivante">›</button><div class="dots"></div>` : ""}
-        ${sizeOf(it) ? `<div class="size"><div><small>${it.taille ? "TAILLE" : "POINTURE"}</small><span></span></div></div>` : ""}
-        <div class="hot">🔥 Ça se bat !</div>
-      </div>
-      <div class="body">
-        <h3></h3><p class="meta"></p><p class="pitch"></p>
-        <button class="like" type="button" aria-pressed="false"></button>
-        <p class="count"></p>
-        <div class="names"></div>
-        <details>
-          <summary></summary>
-          <ul class="comments"></ul>
-          <form class="say"><input maxlength="400" placeholder="Une question, un mot doux…" aria-label="Ton message"><button type="submit">Envoyer</button></form>
-        </details>
-      </div>`;
-    const pics = it.photos || [];
-    if (pics.length){
-      const img = c.querySelector("img"); let k = 0;
-      const dots = c.querySelector(".dots");
-      const show = n => {
-        k = (n + pics.length) % pics.length; img.src = pics[k];
-        img.alt = it.titre + " (photo " + (k+1) + "/" + pics.length + ")";
-        if (dots) dots.querySelectorAll("i").forEach((d,j) => d.classList.toggle("on", j === k));
-      };
-      if (dots) pics.forEach(() => dots.appendChild(document.createElement("i")));
-      if (pics.length > 1){
-        c.querySelector(".prev").onclick = () => show(k-1);
-        c.querySelector(".next").onclick = () => show(k+1);
-        let x0 = null;
-        img.addEventListener("touchstart", e => { x0 = e.touches[0].clientX }, {passive:true});
-        img.addEventListener("touchend", e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) show(k + (dx < 0 ? 1 : -1)); x0 = null; });
-      }
-      show(0);
+const built = new Set();
+function buildCard(it){
+  const c = document.createElement("article");
+  c.className = "card"; c.id = "card-" + it.id;
+  const pics = it.photos || [];
+  c.innerHTML = `
+    <div class="photo">
+      ${pics.length ? `<img alt="" loading="lazy">` : `<div class="empty"><div>${catOf(it)==="fringues"?"👗":"👠"}<small>photo à venir</small></div></div>`}
+      ${pics.length > 1 ? `<button class="nav prev" type="button" aria-label="Photo précédente">‹</button><button class="nav next" type="button" aria-label="Photo suivante">›</button><div class="dots"></div>` : ""}
+      ${sizeOf(it) ? `<div class="size"><div><small>${it.taille ? "TAILLE" : "POINTURE"}</small><span></span></div></div>` : ""}
+      <div class="hot">🔥 Ça se bat !</div>
+    </div>
+    <div class="body">
+      <p class="giver"></p>
+      <h3></h3><p class="meta"></p><p class="pitch"></p>
+      <button class="like" type="button" aria-pressed="false"></button>
+      <p class="count"></p>
+      <div class="names"></div>
+      <details>
+        <summary></summary>
+        <ul class="comments"></ul>
+        <form class="say"><input maxlength="400" placeholder="Une question, un mot doux…" aria-label="Ton message"><button type="submit">Envoyer</button></form>
+      </details>
+      ${it.dyn ? `<button class="remove" type="button" hidden>Retirer ma pièce</button>` : ""}
+    </div>`;
+  if (pics.length){
+    const img = c.querySelector("img"); let k = 0;
+    const dots = c.querySelector(".dots");
+    img.onerror = () => {
+      const m = /thumbnail\?id=([^&]+)/.exec(img.src);
+      if (m && !img.dataset.fb){ img.dataset.fb = "1"; img.src = "https://lh3.googleusercontent.com/d/" + m[1]; }
+    };
+    const show = n => {
+      k = (n + pics.length) % pics.length; img.dataset.fb = ""; img.src = pics[k];
+      img.alt = it.titre + " (photo " + (k+1) + "/" + pics.length + ")";
+      if (dots) dots.querySelectorAll("i").forEach((d,j) => d.classList.toggle("on", j === k));
+    };
+    if (dots) pics.forEach(() => dots.appendChild(document.createElement("i")));
+    if (pics.length > 1){
+      c.querySelector(".prev").onclick = () => show(k-1);
+      c.querySelector(".next").onclick = () => show(k+1);
+      let x0 = null;
+      img.addEventListener("touchstart", e => { x0 = e.touches[0].clientX }, {passive:true});
+      img.addEventListener("touchend", e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) show(k + (dx < 0 ? 1 : -1)); x0 = null; });
     }
-    if (sizeOf(it)) c.querySelector(".size span").textContent = sizeOf(it);
-    c.querySelector("h3").textContent = it.titre;
-    c.querySelector(".meta").textContent = [it.marque, it.etat].filter(Boolean).join(" · ");
-    c.querySelector(".pitch").textContent = it.phrase || "";
-    c.querySelector(".like").onclick = () => {
-      if (!askName()) return;
-      const liked = state.likes.some(l => l.item===it.id && same(l.name,me));
-      send({action: liked ? "unlike" : "like", item: it.id, name: me});
-      if (!liked) toast("C'est noté, " + me + " 💘");
-    };
-    c.querySelector("form").onsubmit = e => {
-      e.preventDefault();
-      if (!askName()) return;
-      const input = e.target.querySelector("input"); const text = input.value.trim();
-      if (!text) return;
-      input.value = "";
-      send({action:"comment", item: it.id, name: me, text});
-    };
-    grid.appendChild(c);
-  });
+    show(0);
+  }
+  if (sizeOf(it)) c.querySelector(".size span").textContent = sizeOf(it);
+  c.querySelector(".giver").textContent = "🎁 Donné par " + giverOf(it);
+  c.querySelector("h3").textContent = it.titre;
+  c.querySelector(".meta").textContent = [it.marque, it.etat].filter(Boolean).join(" · ");
+  c.querySelector(".pitch").textContent = it.phrase || "";
+  c.querySelector(".like").onclick = () => {
+    if (!askName()) return;
+    const liked = state.likes.some(l => l.item===it.id && same(l.name,me));
+    send({action: liked ? "unlike" : "like", item: it.id, name: me});
+    if (!liked) toast("C'est noté, " + me + " 💘");
+  };
+  c.querySelector("form").onsubmit = e => {
+    e.preventDefault();
+    if (!askName()) return;
+    const input = e.target.querySelector("input"); const text = input.value.trim();
+    if (!text) return;
+    input.value = "";
+    send({action:"comment", item: it.id, name: me, text});
+  };
+  const rm = c.querySelector(".remove");
+  if (rm) rm.onclick = () => {
+    if (!rm.dataset.sure){ rm.dataset.sure = "1"; rm.textContent = "Sûre ? Clique encore pour retirer"; setTimeout(() => { rm.dataset.sure = ""; rm.textContent = "Retirer ma pièce"; }, 4000); return; }
+    send({action:"remove", item: it.id, name: me});
+    toast("Pièce retirée de la vitrine");
+  };
+  return c;
+}
+
+function syncCards(){
+  const items = allItems(); const ids = new Set(items.map(i => i.id));
+  items.forEach(it => { if (!built.has(it.id)){ $("#grid").appendChild(buildCard(it)); built.add(it.id); } });
+  [...built].forEach(id => { if (!ids.has(id)){ const c = document.getElementById("card-" + id); if (c) c.remove(); built.delete(id); } });
 }
 
 function fmtDate(d){
@@ -393,7 +491,10 @@ function fmtDate(d){
 
 function refresh(){
   $("#me").textContent = me || "toi";
-  ITEMS.forEach(it => {
+  syncCards();
+  const items = allItems();
+  document.querySelectorAll("#tabs button").forEach(b => { b.querySelector("small").textContent = "(" + items.filter(i => catOf(i) === b.dataset.t).length + ")"; });
+  items.forEach(it => {
     const c = document.getElementById("card-" + it.id); if (!c) return;
     const likes = state.likes.filter(l => l.item === it.id);
     const mine = !!me && likes.some(l => same(l.name, me));
@@ -402,6 +503,8 @@ function refresh(){
     btn.textContent = mine ? "Je craque 💘 (retirer)" : "Je craque 💖";
     c.classList.toggle("contested", likes.length >= 2);
     c.dataset.mine = mine;
+    c.dataset.gift = !!me && same(giverOf(it), me);
+    const rm = c.querySelector(".remove"); if (rm) rm.hidden = c.dataset.gift !== "true";
     c.querySelector(".count").textContent = likes.length === 0 ? "Personne encore… à toi de jouer."
       : likes.length === 1 ? "1 prétendante" : likes.length + " prétendantes";
     const names = c.querySelector(".names"); names.innerHTML = "";
@@ -417,29 +520,30 @@ function refresh(){
       li.append(b, document.createTextNode(m.text), time); ul.appendChild(li);
     });
   });
+  buildFilters();
   applyFilter();
 }
 
 function applyFilter(){
   let shown = 0;
-  ITEMS.forEach(it => {
-    const c = document.getElementById("card-" + it.id);
-    const ok = catOf(it) === tab && (filter === "all" || (filter === "mine" ? c.dataset.mine === "true" : sizeOf(it) === filter));
+  allItems().forEach(it => {
+    const c = document.getElementById("card-" + it.id); if (!c) return;
+    const ok = catOf(it) === tab && (filter === "all" || (filter === "mine" ? c.dataset.mine === "true"
+      : filter === "gift" ? c.dataset.gift === "true" : sizeOf(it) === filter));
     c.style.display = ok ? "" : "none"; if (ok) shown++;
   });
   $("#emptylist").style.display = shown ? "none" : "block";
 }
 
+function setTab(t){
+  tab = t; filter = "all"; store.set("tupperware-tab", tab);
+  document.querySelectorAll("#tabs button").forEach(x => x.setAttribute("aria-selected", x.dataset.t === tab));
+  buildFilters(); applyFilter();
+}
 function buildTabs(){
   document.querySelectorAll("#tabs button").forEach(b => {
-    const n = ITEMS.filter(i => catOf(i) === b.dataset.t).length;
-    b.insertAdjacentHTML("beforeend", ` <small>(${n})</small>`);
     b.setAttribute("aria-selected", b.dataset.t === tab);
-    b.onclick = () => {
-      tab = b.dataset.t; filter = "all"; store.set("tupperware-tab", tab);
-      document.querySelectorAll("#tabs button").forEach(x => x.setAttribute("aria-selected", x.dataset.t === tab));
-      buildFilters(); applyFilter();
-    };
+    b.onclick = () => setTab(b.dataset.t);
   });
 }
 
@@ -454,6 +558,73 @@ $("#nameForm").onsubmit = e => {
 };
 $("#changeName").onclick = openModal;
 
+/* ----- Je donne aussi ----- */
+let picked = [];
+const gf = $("#giveForm");
+function giveCat(){ return gf.querySelector("input[name=cat]:checked").value; }
+function syncGiveLabels(){
+  const f = giveCat() === "fringues";
+  $("#tailleLbl").textContent = f ? "Taille" : "Pointure";
+  gf.taille.placeholder = f ? "S, M, 38…" : "38";
+  gf.titre.placeholder = f ? "Ex. : Robe à fleurs rouge" : "Ex. : Bottines vernies rouges";
+}
+gf.querySelectorAll("input[name=cat]").forEach(r => r.onchange = syncGiveLabels);
+$("#giveBtn").onclick = () => {
+  if (!askName()) return;
+  gf.querySelector(`input[name=cat][value=${tab}]`).checked = true; syncGiveLabels();
+  $("#giveModal").classList.add("open");
+};
+$("#giveCancel").onclick = () => $("#giveModal").classList.remove("open");
+
+async function shrink(file){
+  const url = URL.createObjectURL(file);
+  try{
+    const img = await new Promise((ok, ko) => { const i = new Image(); i.onload = () => ok(i); i.onerror = ko; i.src = url; });
+    const k = Math.min(1, 1200 / Math.max(img.naturalWidth, img.naturalHeight));
+    const cv = document.createElement("canvas");
+    cv.width = Math.round(img.naturalWidth * k); cv.height = Math.round(img.naturalHeight * k);
+    cv.getContext("2d").drawImage(img, 0, 0, cv.width, cv.height);
+    return cv.toDataURL("image/jpeg", 0.82);
+  } finally { URL.revokeObjectURL(url); }
+}
+function drawPreviews(){
+  const box = $("#previews"); box.innerHTML = "";
+  picked.forEach((d, i) => {
+    const w = document.createElement("div"); w.className = "pv";
+    const im = document.createElement("img"); im.src = d; im.alt = "Photo " + (i+1);
+    const x = document.createElement("button"); x.type = "button"; x.textContent = "×"; x.setAttribute("aria-label", "Enlever la photo " + (i+1));
+    x.onclick = () => { picked.splice(i, 1); drawPreviews(); };
+    w.append(im, x); box.appendChild(w);
+  });
+  $("#fileLbl").firstChild.textContent = picked.length >= 3 ? "📸 3 photos max, c'est complet" : picked.length ? "📸 Ajouter une autre photo" : "📸 Ajouter 1 à 3 photos";
+}
+gf.photos.onchange = async () => {
+  const files = [...gf.photos.files].slice(0, 3 - picked.length);
+  for (const f of files){
+    try{ picked.push(await shrink(f)); }catch(e){ toast("Cette photo ne passe pas, essaie en JPEG"); }
+  }
+  gf.photos.value = ""; drawPreviews();
+};
+gf.onsubmit = async e => {
+  e.preventDefault();
+  if (!askName()) return;
+  const titre = gf.titre.value.trim();
+  if (!titre){ toast("Dis-nous ce que c'est 😉"); return; }
+  if (!picked.length){ toast("Ajoute au moins une photo"); return; }
+  const btn = $("#giveSubmit"); btn.disabled = true; btn.textContent = "Envoi en cours…";
+  const cat = giveCat();
+  const ok = await send({ action: "add", name: me, piece: { cat, titre, taille: gf.taille.value.trim(), marque: gf.marque.value.trim(),
+    etat: gf.etat.value, phrase: gf.phrase.value.trim() }, images: picked.map(d => d.split(",")[1]) });
+  btn.disabled = false; btn.textContent = "Mettre en vitrine 💖";
+  if (!ok) return;
+  gf.reset(); picked = []; drawPreviews();
+  $("#giveModal").classList.remove("open");
+  setTab(cat);
+  toast("Ta pièce est en vitrine, " + me + " ✨");
+  const cards = [...document.querySelectorAll("#grid .card")]; const last = cards[cards.length - 1];
+  if (last) last.scrollIntoView({behavior:"smooth", block:"center"});
+};
+
 let tt;
 function toast(msg){ const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("show"), 2600); }
 
@@ -461,9 +632,9 @@ function toast(msg){ const t = $("#toast"); t.textContent = msg; t.classList.add
 $("#rule").textContent = CONFIG.REGLE;
 $("#rdv").textContent = CONFIG.RDV;
 if (DEMO) $("#demo").style.display = "block";
-buildTabs(); buildFilters(); buildCards(); load();
+buildTabs(); refresh(); load();
 if (!me) openModal();
-setInterval(() => { if (!document.hidden) load(); }, 20000);
+setInterval(() => { if (!document.hidden && !$("#giveModal").classList.contains("open")) load(); }, 20000);
 document.addEventListener("visibilitychange", () => { if (!document.hidden) load(); });
 </script>
 </body>
